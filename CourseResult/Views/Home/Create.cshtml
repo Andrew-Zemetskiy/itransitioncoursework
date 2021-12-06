@@ -1,0 +1,30 @@
+﻿@model CourseResult.Models.Overview
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h3>Создание нового обзора!</h3>
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(model => model.Category, "Категория")
+	<br>
+	@Html.EditorFor(model => model.Category)
+	<br>
+	@Html.LabelFor(model => model.Title, "Заголовок")
+	<br>
+	@Html.EditorFor(model => model.Title)
+	<br>
+	@Html.LabelFor(model => model.Content, "Содержание")
+	<br>
+	@Html.EditorFor(model => model.Content)
+	<br>
+	@Html.LabelFor(model => model.Creator, "Создатель")
+	<br>
+	@Html.EditorFor(model => model.Creator)
+	<br>
+	@Html.LabelFor(model => model.Grade, "Оценка (x/10)")
+	<br>
+	@Html.EditorFor(model => model.Grade)
+	<br>
+	<input type="submit" />
+}

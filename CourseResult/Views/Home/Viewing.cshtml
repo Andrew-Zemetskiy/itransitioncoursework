@@ -1,0 +1,18 @@
+﻿@model CourseResult.Models.Overview
+@{
+	ViewData["Title"] = "Обзор";
+	Layout = "CustomLayout";
+}
+
+<br />
+<div class="form-group">
+	<p><b>Автор обзора:</b> <span style="text-decoration: underline;">@Model.Creator</span> <b>Категория:</b> <span style="text-decoration: underline;">@Model.Category</span></p>
+	<fieldset>
+		<p><b>Название:</b> <span style="text-decoration: underline;">@Model.Title</span></p>
+		<p><b>Содержание:</b> @Model.Content</p>
+		<p><b>Оценка:</b> @Model.Grade</p>
+
+		<form asp-controller="Home" asp-action="Index"><input type="submit" value="На главную" /></form>
+		<form asp-controller="Home" asp-action="@Model.Category"><input type="submit" value="Еще обзоры из этой категории" /></form>
+	</fieldset>
+</div>

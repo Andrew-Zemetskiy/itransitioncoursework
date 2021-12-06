@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CourseResult.Models.Overview>
+@{
+	ViewData["Title"] = "Cinema";
+	Layout = "CustomLayout";
+}
+
+<div>
+	<br>
+	<div class="form-group">
+		<table class="table-bordered" style="font-size:14pt;" cellpadding="8">
+			<tr style="font-weight: bold; text-decoration:underline;" class="font-italic"><td>Обзор</td><td>Автор</td><td>Оценка</td></tr>
+			@foreach (var a in Model)
+			{
+				<tr>
+					<td>@Html.DisplayFor(modela => a.Title)</td>
+					<td>@Html.DisplayFor(modela => a.Creator)</td>
+					<td style="text-align:center">@Html.DisplayFor(modela => a.Grade)/10</td>
+					<td style="font-weight:400">@Html.ActionLink("Читать", "Viewing", new { id = a.Id })</td>
+				</tr>
+			}
+		</table>
+	</div>
+</div>

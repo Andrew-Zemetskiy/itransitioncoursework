@@ -1,0 +1,35 @@
+﻿@model CourseResult.Models.Overview
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h2>Редактирование обзора @Model.Title</h2>
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+<fieldset>
+	@Html.HiddenFor(p => p.Id)
+	<p>
+		@Html.LabelFor(p => p.Category, "Категория")<br>
+		@Html.EditorFor(p => p.Category)
+	</p>
+	<p>
+		@Html.LabelFor(p => p.Title, "Заголовок")<br>
+		@Html.EditorFor(p => p.Title)
+	</p>
+	<p>
+		@Html.LabelFor(p => p.Content, "Содержание")<br>
+		@Html.EditorFor(p => p.Content)
+	</p>
+	<p>
+		@Html.LabelFor(p => p.Creator, "Создатель")<br>
+		@Html.EditorFor(p => p.Creator)
+	</p>
+	<p>
+		@Html.LabelFor(p => p.Grade, "Оценка")<br>
+		@Html.EditorFor(p => p.Grade)
+	</p>
+	<p>
+		<input type="submit" value="Отправить" />
+	</p>
+</fieldset>
+}

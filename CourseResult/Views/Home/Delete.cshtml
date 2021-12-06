@@ -1,0 +1,23 @@
+﻿@model CourseResult.Models.Overview
+@{
+	ViewData["Title"] = "Delete";
+}
+<h2>Удаление игрока обзора @Model.Title от Автора:@Model.Creator</h2>
+<dl>
+	<dt>
+		@Html.LabelFor(model => model.Category, "Категория")
+	</dt>
+	<dd>@Html.DisplayFor(p => p.Category)</dd>
+	<dt>Заголовок</dt>
+	<dd>@Html.DisplayFor(p => p.Title)</dd>
+	<dt>Содержание</dt>
+	<dd>@Html.DisplayFor(p => p.Content)</dd>
+	<dt>Создатель</dt>
+	<dd>@Html.DisplayFor(p => p.Creator)</dd>
+	<dt>Оценка</dt>
+	<dd>@Html.DisplayFor(p => p.Grade)</dd>
+</dl>
+@using (Html.BeginForm())
+{
+	<input type="submit" value="Удалить" />
+}
